@@ -30,12 +30,16 @@ Zadnja faza je obrana projekta - nakon završetka finalne verzije svoje aplikaci
 
 # Opis projekta
 ## Kratki opis
-Ovdje ide opis projekta
+Glavna ideja projekta temelji se na rezervaciji hotela. Korisnik je u mogućnosti pretraživati različita mjesta te hotele. Odabire željene datume za prijavu/odjavu sobe, broj odraslih i djece, te postoje dodatne mogućnosti koje ,ako žele, mogu uključiti u svoju rezervaciju.
 ## Tehnologije
 1. Frontend
 2. Backend
 3. Baza
 ## Popis funkcionalnosti
-1. a
-2. b
-3. c
+1. Prijava/registracija korisnika
+2. Pretraživanje hotela
+3. Određivanje datuma
+4. Filtriranje preporuke hotela od strane gostiju
+5. Dodavanje rezervacija
+6. Otkazivanje rezervacija
+7. Uređivanje rezervacija
