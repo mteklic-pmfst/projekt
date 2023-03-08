@@ -8,10 +8,10 @@ function Home(){
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://hips.hearstapps.com/hmg-prod/images/rkbzouak-1656015960.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="First slide"></img>
+      <img class="d-block w-100" src="https://c4.wallpaperflare.com/wallpaper/146/867/628/luxury-hotel-wallpaper-preview.jpg" alt="First slide"></img>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://hips.hearstapps.com/hmg-prod/images/lpibo-ew-1656015868.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Second slide"></img>
+      <img class="d-block w-100 " src="https://hips.hearstapps.com/hmg-prod/images/lpibo-ew-1656015868.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Second slide"></img>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="https://hips.hearstapps.com/hmg-prod/images/0gacyp0-1656015781.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Third slide"></img>

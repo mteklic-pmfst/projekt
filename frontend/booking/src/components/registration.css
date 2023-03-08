@@ -1,0 +1,42 @@
+.form-reg{
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.lag{
+    border:4px solid whitesmoke;
+    border-radius: 7px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    border-color: floralwhite;
+}  
+
+
+.pocetni{
+    background-color:rgb(253, 170, 198);
+    height: 600px;
+    width: 100%; 
+}
+
+.form-control{
+    height: 50px;
+    width: 550px;
+    margin: 20px;  
+}
+
+.btnS{
+    border: 2px dotted rgb(155, 231, 231);
+    border-radius: 5px;
+}
+
+input{
+    box-shadow: none !important;
+    margin-top: 10px;
+    border: 1.5px solid black !important;
+  }
