@@ -1,26 +1,23 @@
 # Evidencija aktivnosti
-
-<<<<<<< HEAD
 ## 18.02.2023.
 Pocetak | Kraj
 ------- | ----
 14:00   | 17:00
 ### Kratki opis promjena
 Frontend-navigacijska traka
-=======
-## 06.11.2020.
+## 03.03.2023.
 Pocetak | Kraj
 ------- | ----
-14:15   | 18:00
-### Kratki opis promjena
-Definirani zahtjevi aplikacije.
-Dovršena prva faza projekta.
-
-
-## 22.12.2021.
+11:00  | 14:00
+## 04.03.2023.
 Pocetak | Kraj
 ------- | ----
-14:15   | 15:15
+08:00  | 10:00
 ### Kratki opis promjena
-Održano predavanje o projektu
->>>>>>> cdc48fe3a8ec9a34d3fac8ef0e4a3d1f62e2c6c2
+Frontend-slide i traka pretraživanja za rezervacije 
+## 08.03.2023.
+Pocetak | Kraj
+------- | ----
+08:00  | 11:00
+### Kratki opis promjena
+Frontend-registracijska forma
