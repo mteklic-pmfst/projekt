@@ -4,32 +4,41 @@ import Nav from './components/navbar';
 import Middle  from './components/middle';
 import {
   BrowserRouter,
-  
+  Routes,
   Route,
-  Link,
+  Link
 } from 'react-router-dom';
 import Home from './components/home_part';
 import Footer from './components/footer';
 import Registration from './components/registration';
 
+
 import Login from './components/login';
+import Homescreen from './components/homescreen';
 
 function App() {
   return (
     <div className="App">
-        
-        {/* <Login /> */}
-        <Nav/>
+        <Nav/> 
+        <BrowserRouter>
+          <Routes>
+            <Route path='home' element={<Homescreen/>}/>
+          </Routes>
+        </BrowserRouter>
+        {/* <Registration />
+        <Login/> */}
+        {/*<Nav/> 
         <Home />
         
         
         <Middle/>
-        {/* <Footer/>
-        {/* <BrowserRouter>
-          
-              <Route path='/register' exact component={Registration}/>
-              <Route path='/login' exact component={login}/>
-        </BrowserRouter> */} 
+        <Footer/> */}
+         {/* <Router>
+            <Routes>
+                <Route path='/register' element={Registration}/>
+                <Route path='/login' element={Login}/>
+              </Routes>
+        </Router>  */}
         
     </div>
   );

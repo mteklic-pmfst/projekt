@@ -41,6 +41,9 @@ function Registration() {
                     value={cpassword} onChange={(e)=>(setcpassword(e.target.value))}
                     />
                     <button className='btnS' onClick={register}>Registriraj se</button>
+                    <p className='loginregistracija'>
+                        <button>Prijavi se</button>
+                    </p>
                 </div>
 
             </div>

@@ -8,11 +8,17 @@ function Login() {
     
 
     function login(){ 
-        const user={
+        if(password!=""){
+            const user={
                 email,
                 password,  
             }
             console.log(user)
+        }
+        else{
+            alert("Unesite lozinku")
+
+        }
     }
   return (
     <div className='pocetna'>
@@ -27,6 +33,11 @@ function Login() {
                     value={password} onChange={(e)=>(setPassword(e.target.value))}
                     />
                     <button className='btnS' onClick={login}>Prijavi se</button>
+                    
+                    <p className='registracijalogin'>
+                        <button>Registriraj se</button>
+                    </p>
+                    
                 </div>
 
             </div>
