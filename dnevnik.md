@@ -27,4 +27,4 @@ Pocetak | Kraj
 08:00  | 13:00
 16:00  |  20:30
 ### Kratki opis promjena
-Frontend-Prikaz soba iz baze na frontendu i backendu, početak postavljanja mogućnosti rezerviranja sobe
+Prikaz soba iz baze na frontendu i backendu, početak postavljanja mogućnosti rezerviranja sobe
