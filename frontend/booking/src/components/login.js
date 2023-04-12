@@ -25,14 +25,14 @@ function Login() {
         <div className='form'>
             <div className='form-log'> 
                 <div className='lag1'>
-                <h3>Prijava</h3>
+                <h3>Login</h3>
                     <input type="text" className='form-control' placeholder='email'
                     value={email} onChange={(e)=>(setEmail(e.target.value))}
                     />
                     <input type="text" className='form-control' placeholder='lozinka'
                     value={password} onChange={(e)=>(setPassword(e.target.value))}
                     />
-                    <button className='btnS' onClick={login}>Prijavi se</button>
+                    <button className='btnS' onClick={login}>Login</button>
                     
                     <p className='registracijalogin'>
                         <button>Registriraj se</button>

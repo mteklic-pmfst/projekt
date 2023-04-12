@@ -1,30 +1,71 @@
 import React, {useState,useEffect} from 'react'
 import axios from "axios";
+import Room from "../components/room"
+import './homescreen.css';
 
 function Homescreen() {
-   
+   const [data,setData]=useState([]);
+   const [loading,setLoading]=useState();
+   const [error,setError]=useState();
+
+    const getData=async ()=>{
+      setLoading(true)
+      const res=await axios.get('/api/rooms/getallrooms')
+      setData(res.data);
+      console.log(res.data)
+      setLoading(false);
+    }
+
     useEffect(()=>{ 
-      const getData=async ()=>{
-        const data=(await axios.get('/getallrooms/')).data
-        console.log(data.length)
+      try {
+        getData();
+      } catch (error) {
+        setError(true)
+        console.log(error)
+        setLoading(false)
       }
-      getData()      
-          
-          
       
     },[])
 
-
   return (
-    <div>
-        <p>Homezaslon</p>
-        {/* <h1>there are {data.length} rooms </h1> */}
-        
-    </div>
-  )
+    // <div className='contain'>
+    //    <div className='row justify-content-center mt-5'>
+    //        {/* <p>Homezaslon</p>
+    //      <h1>there are {data.length} rooms </h1>  */}
 
+    //     {loading ?(<h1>Loading..</h1>)
+    //     :error ?(<h1>Error</h1>)
+    //     :(data.map((room)=>{
+    //       return <div className='col-md-9'>
+    //         <Room room={room}/>
+    //       </div>
+    //     })
+    //     )}
+        
+    //    </div>
+    // </div>
+
+    <div className='container'>
+       <div className='display'>
+           {/* <p>Homezaslon</p>
+         <h1>there are {data.length} rooms </h1>  */}
+
+        {loading ?(<h1>Loading..</h1>)
+        :error ?(<h1>Error</h1>)
+        :(data.map((room)=>{
+          return <div className='displayone'>
+            <Room room={room}/>
+          </div>
+        })
+        )}
+        
+       </div>
+    </div>
+  )}
   
-}
+
+ 
+
 // import React, { useState, useEffect } from "react";
 
 // import axios from "axios";

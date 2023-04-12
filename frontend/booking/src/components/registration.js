@@ -28,7 +28,7 @@ function Registration() {
         <div className='form'>
             <div className='form-reg'> 
                 <div className='lag'>
-                <h3>Registracija</h3>
+                <h3>Sign up</h3>
                     <input type="text" className='form-control' placeholder='ime' 
                     value={name} onChange={(e)=>(setName(e.target.value))}/>
                     <input type="text" className='form-control' placeholder='email'
@@ -40,9 +40,9 @@ function Registration() {
                     <input type="text" className='form-control' placeholder='potvrdi lozinku'
                     value={cpassword} onChange={(e)=>(setcpassword(e.target.value))}
                     />
-                    <button className='btnS' onClick={register}>Registriraj se</button>
+                    <button className='btnS' onClick={register}>Sign up</button>
                     <p className='loginregistracija'>
-                        <button>Prijavi se</button>
+                        <button>Login</button>
                     </p>
                 </div>
 

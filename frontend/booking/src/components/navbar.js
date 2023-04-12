@@ -21,20 +21,20 @@ function Nav(){
         <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
                 <li className="nav-item active">
-                    <a className="nav-link" href="#">Početna</a>
+                    <a className="nav-link" href="#">Home</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">O nama</a>
+                    <a className="nav-link" href="#">About us</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Sobe</a>
+                    <a className="nav-link" href="#">Rooms</a>
                 </li>
 
                 <li className="nav-item">
-                    <button className='blabla'>Registracija</button>
+                    <button className='blabla'>Sign Up</button>
                 </li>
                 <li className="nav-item">
-                    <button className='blabla1'>Prijava</button>
+                    <button className='blabla1'>Login</button>
                 </li>
                
             </ul>

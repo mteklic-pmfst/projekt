@@ -15,22 +15,24 @@ import Registration from './components/registration';
 
 import Login from './components/login';
 import Homescreen from './components/homescreen';
+import Booking from './components/book';
 
 function App() {
   return (
     <div className="App">
-        <Nav/> 
+        <Nav/>
         <BrowserRouter>
           <Routes>
-            <Route path='home' element={<Homescreen/>}/>
+            <Route path='/home' element={<Homescreen/>}/>
+            <Route path='/book/:roomid'element={<Booking/>}/>
           </Routes>
         </BrowserRouter>
         {/* <Registration />
-        <Login/> */}
-        {/*<Nav/> 
+        <Login/>
+        <Nav/>
         <Home />
-        
-        
+
+
         <Middle/>
         <Footer/> */}
          {/* <Router>
@@ -39,7 +41,7 @@ function App() {
                 <Route path='/login' element={Login}/>
               </Routes>
         </Router>  */}
-        
+
     </div>
   );
 }

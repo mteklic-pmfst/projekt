@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 .navbar{
-    background-color: rgba(187, 124, 218, 0.785) !important;
+    background-color:rgb(164, 162, 162) !important;
     
 }
 
@@ -9,8 +10,8 @@
 }
 .navbar-brand{
     color: white !important;
-    font-size: 2rem ;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.4rem ;
+    font-family: 'Kalam', cursive;
     margin-left: 1cm;
    
 }
@@ -27,7 +28,7 @@
     margin-right: 0.2cm;
     margin-top: 0.2cm;
     margin-left: 0.8cm;
-    color: rgba(187, 124, 218, 0.785)
+    color: rgb(164, 162, 162)
     
 }
 
@@ -36,6 +37,6 @@
     background-color: whitesmoke;
     margin-right: 0.2cm;
     margin-top: 0.2cm;
-    color: rgba(187, 124, 218, 0.785);
+    color: rgb(164, 162, 162)
 
 }
