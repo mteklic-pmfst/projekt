@@ -1,13 +1,10 @@
 # Evidencija aktivnosti
-
-<<<<<<< HEAD
 ## 18.02.2023.
 Pocetak | Kraj
 ------- | ----
 14:00   | 17:00
 ### Kratki opis promjena
 Frontend-navigacijska traka
-
 ## 03.03.2023.
 Pocetak | Kraj
 ------- | ----
@@ -24,10 +21,10 @@ Pocetak | Kraj
 08:00  | 11:00
 ### Kratki opis promjena
 Frontend-registracijska forma
-
-## 15.03.2023.
+## 12.04.2023.
 Pocetak | Kraj
 ------- | ----
-09:30  | 
+08:00  | 13:00
+16:00  |  20:30
 ### Kratki opis promjena
-Frontend-registracijska forma
+Prikaz soba iz baze na frontendu i backendu, početak postavljanja mogućnosti rezerviranja sobe
