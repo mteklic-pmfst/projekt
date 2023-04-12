@@ -21,3 +21,10 @@ Pocetak | Kraj
 08:00  | 11:00
 ### Kratki opis promjena
 Frontend-registracijska forma
+## 12.04.2023.
+Pocetak | Kraj
+------- | ----
+08:00  | 13:00
+16:00  |  20:30
+### Kratki opis promjena
+Frontend-Prikaz soba iz baze na frontendu i backendu, početak postavljanja mogućnosti rezerviranja sobe
