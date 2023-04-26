@@ -28,3 +28,15 @@ Pocetak | Kraj
 16:00  |  20:30
 ### Kratki opis promjena
 Prikaz soba iz baze na frontendu i backendu, početak postavljanja mogućnosti rezerviranja sobe
+## 25.04.2023.
+Pocetak | Kraj
+------- | ----
+10:00  | 13:00
+### Kratki opis promjena
+Mogućnosti rezervacije i login-a preko Backend-a
+## 26.04.2023.
+Pocetak | Kraj
+------- | ----
+16:00  | 22:00
+### Kratki opis promjena
+Mogućnosti pregleda detalja sobe te mogućnost daljnje rezervacije sa frontend-a
