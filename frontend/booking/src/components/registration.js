@@ -1,5 +1,9 @@
 import React, {useState,useEffect} from 'react'
 import './registration.css';
+import axios from 'axios';
+import Loader from './loader.js';
+import Error from './Error.js';
+import Success from './Success';
 
 function Registration() {
     const[name,setName]=useState('')
@@ -7,7 +11,11 @@ function Registration() {
     const[password,setPassword]=useState('')
     const[cpassword,setcpassword]=useState('')
 
-    function register(){
+    const [loading,setLoading]=useState(false);
+    const [error,setError]=useState();
+    const [success,setSuccess]=useState();
+
+    async function register(){
         if(password ===cpassword){
             const user={
                 name,
@@ -15,7 +23,20 @@ function Registration() {
                 password,
                 cpassword
             }
-            console.log(user)
+
+            try {
+                setLoading(true)
+                const result=await axios.post('http://localhost:3001/api/auth/register',user)
+                
+
+                result.send(result.data)
+                console.log(result.data)
+                console.log(user.name);
+            } catch (error) {
+                console.log(error);
+                setLoading(false)
+                setError(true)
+            }
         }
         else{
             alert("Password not correct!Try again")
@@ -25,6 +46,7 @@ function Registration() {
     }
   return (
     <div className='pocetni'>
+        
         <div className='form'>
             <div className='form-reg'> 
                 <div className='lag'>

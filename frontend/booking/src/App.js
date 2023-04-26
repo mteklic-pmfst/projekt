@@ -21,26 +21,25 @@ function App() {
   return (
     <div className="App">
         <Nav/>
+        {/* <Login/> */}
         <BrowserRouter>
           <Routes>
+            <Route path='/' element={<Login/>}/>
             <Route path='/home' element={<Homescreen/>}/>
             <Route path='/book/:roomid'element={<Booking/>}/>
+            <Route path='/register' element={<Registration/>}/>
+            {/* <Route path='/login' element={<Login/>}/> */}
           </Routes>
         </BrowserRouter>
-        {/* <Registration />
-        <Login/>
+        {/* <Registration /> */}
+        {/* <Login/>
         <Nav/>
         <Home />
 
 
-        <Middle/>
-        <Footer/> */}
-         {/* <Router>
-            <Routes>
-                <Route path='/register' element={Registration}/>
-                <Route path='/login' element={Login}/>
-              </Routes>
-        </Router>  */}
+        <Middle/> */}
+        {/* <Footer/> */}
+       
 
     </div>
   );

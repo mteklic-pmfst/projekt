@@ -6,6 +6,7 @@ import {DateRange} from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import {format} from "date-fns"
+import { Link } from 'react-router-dom';
 
 function Mid(){
     const[openDate,setOpen]=useState(false);
@@ -85,7 +86,7 @@ function Mid(){
                 
             </div>
             <div className='ItemS'>
-                <button className='btn1'>Traži</button>
+                    <button className='btn1'>Traži</button>
             </div>
         </div>
     )

@@ -1,35 +1,27 @@
 const express =require("express");
-const roomsRoute = require('./routes/roomRoutes')
+const mongoose = require('mongoose')
+const cors = require('cors')
+const dotenv = require('dotenv');
+require('express-async-errors')
+
+const authRoute=require('./routes/auth')
+const roomsRoute = require('./routes/roomRoutes.js')
+const usersRoute = require('./routes/usersRoutes.js')
+
 const app = express();
-const Room=require('../models/room')
+dotenv.config();
 
+mongoose.connect(process.env.CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopology:true})
+.then(result => {
+  console.log("Spojeni smo na bazu");
+}).catch(error => {
+  console.log("Greška pri spajanju", error.message);
+})
+
+app.use(cors());
+app.use(express.json())
 app.use('/api/rooms',roomsRoute)
-app.use(express.json());
-
-app.get("/api/rooms/getallrooms",async(req,res)=>{
-    try {
-        const rooms=await Room.find()
-        res.send(rooms)
-    } catch (error) {
-        return res.status(400).json({error})
-    }
-
-})
-
-router.post("api/rooms/getroombyid ",async(req,res)=>{
-
-    const roomid=req.body.roomid; 
-    try {
-        const room=await Room.findOne({_id:roomid})
-        res.send(room)
-    } catch (error) {
-        return res.status(400).json({error})
-    }
-
-})
-
-app.get('/', (req, res) =>{
-    res.send('<h1>Pozdrav od Express servera</h1>')
-})
+app.use('/api/users',usersRoute)
+app.use('/api/auth',authRoute)
 
 module.exports = app;

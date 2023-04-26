@@ -1,19 +1,34 @@
 import React, {useState,useEffect} from 'react'
+import { Link, useNavigate } from "react-router-dom";
 import './login.css';
+import axios from 'axios';
 
-function Login() {
+
+const Login=() =>{
+
     
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
+    // const navigate=useNavigate();
     
-
-    function login(){ 
-        if(password!=""){
+   
+    async function login(){ 
+        
+    
+        if(password!==""){
             const user={
                 email,
                 password,  
             }
-            console.log(user)
+            
+            try {
+                const result=await axios.post('http://localhost:3001/api/auth/login',user)
+                result.send(result.data)
+                console.log(result.data)
+        
+            } catch (error) {
+                
+            } 
         }
         else{
             alert("Unesite lozinku")
@@ -27,15 +42,18 @@ function Login() {
                 <div className='lag1'>
                 <h3>Login</h3>
                     <input type="text" className='form-control' placeholder='email'
-                    value={email} onChange={(e)=>(setEmail(e.target.value))}
+                    id="username" value={email} onChange={(e)=>(setEmail(e.target.value))}
                     />
                     <input type="text" className='form-control' placeholder='lozinka'
-                    value={password} onChange={(e)=>(setPassword(e.target.value))}
+                    // id="pass" value={password} onChange={(e)=>(setPassword(e.target.value))}
+                    id="pass" value={password} onChange={(e)=>(setPassword(e.target.value))}
                     />
                     <button className='btnS' onClick={login}>Login</button>
                     
                     <p className='registracijalogin'>
+                        
                         <button>Registriraj se</button>
+                        
                     </p>
                     
                 </div>

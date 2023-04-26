@@ -28,7 +28,7 @@ function Room({room}) {
     //         </div>
     // </div>
 
-<div className='row bs'>
+<div className='row ls'>
     <div className='column'>
       <h1>{room.name}</h1>
       <p>Count: {room.count}</p>
