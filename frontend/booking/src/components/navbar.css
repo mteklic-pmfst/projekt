@@ -6,20 +6,18 @@
 
 .nav-link{
     color:rgb(233, 233, 235) !important;
-    
 }
+
 .navbar-brand{
     color: white !important;
     font-size: 2.4rem ;
     font-family: 'Kalam', cursive;
     margin-left: 1cm;
-   
 }
 
 .navbar-nav{
     margin-inline-start: auto;
     margin-right: 1cm;
-    
 }
 
 .blabla{
@@ -29,7 +27,6 @@
     margin-top: 0.2cm;
     margin-left: 0.8cm;
     color: rgb(164, 162, 162)
-    
 }
 
 .blabla1{
@@ -39,4 +36,8 @@
     margin-top: 0.2cm;
     color: rgb(164, 162, 162)
 
+}
+
+.dropdown-menu{
+    margin-right: 2cm;
 }

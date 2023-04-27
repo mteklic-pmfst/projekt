@@ -16,6 +16,7 @@ import Registration from './components/registration';
 import Login from './components/login';
 import Homescreen from './components/homescreen';
 import Booking from './components/book';
+import Part_all from './Part_all';
 
 function App() {
   return (
@@ -28,17 +29,18 @@ function App() {
             <Route path='/home' element={<Homescreen/>}/>
             <Route path='/book/:roomid'element={<Booking/>}/>
             <Route path='/register' element={<Registration/>}/>
-            {/* <Route path='/login' element={<Login/>}/> */}
+            {/* <Route path='/firstpage' element={<Middle/>}/> */}
+            <Route path='/firstpage' element={<Part_all/>}/>
           </Routes>
         </BrowserRouter>
-        {/* <Registration /> */}
-        {/* <Login/>
+        {/* <Registration /> 
+         <Login/>
         <Nav/>
         <Home />
 
 
-        <Middle/> */}
-        {/* <Footer/> */}
+        <Middle/>  */}
+         {/* <Footer/> */}
        
 
     </div>

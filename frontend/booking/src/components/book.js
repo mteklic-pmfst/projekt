@@ -5,7 +5,7 @@ import Loader from './loader.js';
 import Error from './Error.js';
 
 function Booking(){
-
+const user = JSON.parse(localStorage.getItem('currentUser'))
 const { roomid }= useParams();
   console.log(roomid)
     
@@ -48,7 +48,7 @@ const { roomid }= useParams();
                                     <hr/>
                                  
                                     <b>
-                                      <p>Name:</p>
+                                      <p>Name:  {user.data.name}</p>
                                       <p>From Date:</p>
                                       <p>To Date:</p>
                                       <p>Max Count:{room.count}</p>

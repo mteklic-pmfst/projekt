@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './middle.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faBed, faCalendarDays, faPerson} from '@fortawesome/free-solid-svg-icons'
@@ -33,7 +33,11 @@ function Mid(){
         })
     }
 
+    function search(){
+        window.location.href = '/home'
+    }
     return(
+        
         <div className='search'> 
             <div className='ItemS'>
                 <input type="text" 
@@ -41,7 +45,7 @@ function Mid(){
                 className='InputSearch'/>
                 <FontAwesomeIcon icon={faBed} />
             </div>
-
+            
             <div className='ItemS'>
                 <span onClick={()=>setOpen(!openDate)} className='TextPrijava'>{`${format(date[0].startDate,"dd/MM/yyyy")} do ${format(date[0].endDate,"dd/MM/yyyy")}`}</span>
                 <FontAwesomeIcon icon={faCalendarDays} />
@@ -52,6 +56,7 @@ function Mid(){
                     ranges={date}
                     className="datum"
                 />}
+                
             </div>
 
              <div className='ItemS'>
@@ -86,7 +91,7 @@ function Mid(){
                 
             </div>
             <div className='ItemS'>
-                    <button className='btn1'>Traži</button>
+                    <button className='btn1' onClick={search}>Traži</button>
             </div>
         </div>
     )
