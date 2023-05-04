@@ -4,6 +4,7 @@ import axios from 'axios';
 import Loader from './loader.js';
 import Error from './Error.js';
 import Success from './Success';
+import { Link } from 'react-router-dom';
 
 function Registration() {
     const[name,setName]=useState('')
@@ -53,7 +54,6 @@ function Registration() {
     {error && (<Error/>)}
     
     <div className='pocetni'>
-       
         <div className='form'>
             <div className='form-reg'> 
             
@@ -73,7 +73,9 @@ function Registration() {
                     />
                     <button className='btnS' onClick={register}>Sign up</button>
                     <p className='loginregistracija'>
-                        <button>Login</button>
+                        <button>
+                        
+                            <Link to='/'>Login</Link></button>
                     </p>
                 </div>
 

@@ -9,10 +9,6 @@ const roomSchema = mongoose.Schema({
         type:Number,
         required:true
     },
-    breakfast:{
-        type:Boolean,
-        required:true
-    },
     price:{
         type:Number,
         required:true

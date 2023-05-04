@@ -34,29 +34,4 @@ router.put("/:id", verify ,async (req,res)=>{
 //GET
 
 //GET ALL
-
-// GET USER STATS
-// const { register } =require( "../controllers/users.js")
-
-// router.post("/register",register)
-
-// router.post("/login",async(req,res)=>{
-
-//     const {email,password}=req.body;
-
-//     try {
-//         const user=await User.findOne({email:email,password:password})
-//         if(user){
-//             res.send(user)
-//         }
-//         else{
-//             return res.status(400).json("Login failed")
-//         }
-//     } catch (error) {
-//         return res.status(400).json({error})
-//     }
-// })
-
-
-
 module.exports=router;

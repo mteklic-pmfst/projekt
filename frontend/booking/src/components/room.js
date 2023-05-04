@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -6,11 +5,12 @@ import Carousel from 'react-bootstrap/Carousel';
 import './room.css';
 import { Link } from 'react-router-dom';
 
-function Room({room}) {
+function Room({room,fromDate,toDate}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
   return (
     // <div className='column'>
     //     <div className='column'>
@@ -34,9 +34,13 @@ function Room({room}) {
       <p>Count: {room.count}</p>
       <div className='buttoncl'>
         
-          <Link to={`/book/${room._id}`}> 
-               <button className='btn0'>Book</button>
-          </Link> 
+        {(fromDate&&toDate)&&(
+            <Link to={`/book/${room._id}/${fromDate}/${toDate}`}> 
+            <button className='btn0'>Book</button>
+        </Link> 
+        )}
+
+          
         
             <button className='btnD' onClick={handleShow}>
                  Details
@@ -70,4 +74,5 @@ function Room({room}) {
       </Modal>
 </div>
 )}
+
 export default Room

@@ -58,7 +58,8 @@ const Login = () => {
                             <button className='btnS' onClick={login}>Login</button>
 
                             <p className='registracijalogin'>
-                                <button>Registriraj se</button>
+                                <button>
+                                <Link to='/register'>Register</Link></button>
                             </p>
 
                         </div>
