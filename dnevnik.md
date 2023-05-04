@@ -40,3 +40,9 @@ Pocetak | Kraj
 16:00  | 22:00
 ### Kratki opis promjena
 Mogućnosti pregleda detalja sobe te mogućnost daljnje rezervacije sa frontend-a
+## 04.05.2023.
+Pocetak | Kraj
+------- | ----
+08:00  | 12:00
+### Kratki opis promjena
+Mogućnosti plaćanja te pregled rezervacija za trenutnog korisnika koji je prijavljen
