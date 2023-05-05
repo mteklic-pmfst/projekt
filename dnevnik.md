@@ -50,5 +50,11 @@ Mogućnosti plaćanja te pregled rezervacija za trenutnog korisnika koji je prij
 Pocetak | Kraj
 ------- | ----
 08:00  | 10:00
+
 ### Kratki opis promjena
 Mogućnosti otkazivanja rezervacije
+Pocetak | Kraj
+------- | ----
+13:30  | 17:30
+### Kratki opis promjena
+Dodana platforma admina
