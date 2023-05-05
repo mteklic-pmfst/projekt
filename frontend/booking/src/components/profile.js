@@ -2,23 +2,20 @@ import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import { Tabs } from 'antd';
 import Loader from './loader.js';
-import Error from './Error.js';
 import Swal from 'sweetalert2'
-import { Divider, Space, Tag } from 'antd';
-
+import { Tag } from 'antd';
 
 const { TabPane } = Tabs
 
 function Profile() {
     const user = JSON.parse(localStorage.getItem('currentUser'))
-
     useEffect(() => {
         if (!user) {
-            window.location.href = '/'
+            window.location.href = '/login'
         }
     }, [])
     return (
-        <div className='mt-3 ml-3' >
+        <div className='mt-3 ms-3' >
             <Tabs defaultActiveKey="1">
                 <TabPane tab="Profile" key="1">
                     <div className='ls'>

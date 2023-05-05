@@ -7,6 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Kalam', cursive !important;
+  background-color:rgb(243, 233, 236);
 }
 
 code {
@@ -15,3 +16,22 @@ code {
    
 }
 
+.landing{
+  color: rgb(243, 233, 236);;
+  background-color:rgb(243, 233, 236);
+  height: 100vh;
+  font-size: 150px !important;
+  background-image: url("https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvdGVsc3xlbnwwfHwwfHw%3D&w=1000&q=80");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+
+}
+
+h2{
+  font-size: 120% !important;
+  padding: 10px;
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+}

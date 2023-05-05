@@ -42,7 +42,7 @@ const Login = () => {
         <div>
             {loading && (<Loader/>)}
             
-            <div className='pocetna'>
+            <div className='pocetna '>
                 <div className='form'>
                     <div className='form-log'>
                         {error && (<Error message='Invalid Credentionals'/>)}

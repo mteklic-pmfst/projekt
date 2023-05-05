@@ -124,4 +124,15 @@ router.post("/cancelbooking",async(req,res)=>{
     }
 })
 
+router.get("/getallbookings",async(req,res)=>{
+    try {
+        const booking=await Booking.find()
+        res.send(booking)
+    } catch (err) {
+        console.error(err);
+        return res.status(400).json({ message: "Error: " + err.message })
+    }
+
+})
+
 module.exports = router;

@@ -56,7 +56,6 @@ function Registration() {
     <div className='pocetni'>
         <div className='form'>
             <div className='form-reg'> 
-            
                 <div className='lag'>
                 {success && (<Success message='Register Success'/>)}
                 <h3>Sign up</h3>
@@ -74,15 +73,13 @@ function Registration() {
                     <button className='btnS' onClick={register}>Sign up</button>
                     <p className='loginregistracija'>
                         <button>
-                        
-                            <Link to='/'>Login</Link></button>
+                            <Link to='/login'>Login</Link>
+                        </button>
                     </p>
                 </div>
-
             </div>
-
         </div>
-    </div>
+        </div>
     </div>
   )
 }

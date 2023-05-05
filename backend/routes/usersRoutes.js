@@ -32,6 +32,16 @@ router.put("/:id", verify ,async (req,res)=>{
 //DELETE
 
 //GET
+router.get("/getallusers",async (req,res)=>{
+    
+        try {
+            const users=await User.find()
+            res.send(users)
+            
+        } catch (err) {
+            console.error(err);
+        return res.status(400).json({ message: "Error: " + err.message })
+        }
+    })
 
-//GET ALL
 module.exports=router;

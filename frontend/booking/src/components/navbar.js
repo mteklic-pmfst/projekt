@@ -6,7 +6,7 @@ function Nav() {
     const user = JSON.parse(localStorage.getItem('currentUser'))
     function logout(){
         localStorage.removeItem('currentUser')
-        window.location.href='/'
+        window.location.href='/login'
     }
     console.log(user)
     return (
@@ -51,11 +51,11 @@ function Nav() {
                         </>) : (
                             <>
                                 <li className="nav-item">
-                                    <button className='blabla' href="/login">Sign Up</button>
+                                    <button className='blabla' href="/register">Sign Up</button>
 
                                 </li>
                                 <li className="nav-item">
-                                    <button className='blabla1'>Login</button>
+                                    <button className='blabla1' href="/login">Login</button>
                                 </li>
                             </>
                         )}

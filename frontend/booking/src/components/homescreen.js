@@ -5,7 +5,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from "moment";
 import axios from "axios";
 import Room from "../components/room"
-import './homescreen.css';
 import Loader from './loader';
 import Error from './Error';
 import 'antd/dist/reset.css';

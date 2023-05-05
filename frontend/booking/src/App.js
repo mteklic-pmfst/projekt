@@ -1,7 +1,7 @@
 
 import './App.css';
 import Nav from './components/navbar';
-import Middle  from './components/middle';
+import Middle from './components/middle';
 import {
   BrowserRouter,
   Routes,
@@ -17,35 +17,29 @@ import Homescreen from './components/homescreen';
 import Booking from './components/book';
 import Part_all from './Part_all';
 import Profile from './components/profile';
+import Admin from './components/Admin';
+import Landing from './Landing';
 
 
 
 function App() {
   return (
     <div className="App">
-        <Nav/>
-        {/* <Login/> */}
-        
-        
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Login/>}/>
-            <Route path='/home' element={<Homescreen/>}/>
-            <Route path='/book/:roomid/:fromDate/:toDate' element={<Booking/>}/>
-            <Route path='/register' element={<Registration/>}/>
-            <Route path='/firstpage' element={<Part_all/>}/>
-            <Route path='/profile' element={<Profile/>}/>
-          </Routes>
-        </BrowserRouter>
-        {/* <Registration /> 
-         <Login/>
-        <Nav/>
-        <Home />
+      <Nav/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/home' element={<Homescreen />} />
+          <Route path='/book/:roomid/:fromDate/:toDate' element={<Booking />} />
+          <Route path='/register' element={<Registration />} />
+          <Route path='/firstpage' element={<Part_all />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/admin' element={<Admin />} />
 
+        </Routes>
+      </BrowserRouter>
 
-        <Middle/>  */}
-         {/* <Footer/> */}
-       
 
     </div>
   );
