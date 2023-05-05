@@ -46,3 +46,9 @@ Pocetak | Kraj
 08:00  | 12:00
 ### Kratki opis promjena
 Mogućnosti plaćanja te pregled rezervacija za trenutnog korisnika koji je prijavljen
+## 05.05.2023.
+Pocetak | Kraj
+------- | ----
+08:00  | 10:00
+### Kratki opis promjena
+Mogućnosti otkazivanja rezervacije
