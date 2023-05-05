@@ -14,11 +14,11 @@ const bookingShema=mongoose.Schema({
         type:String,
         require:true
     },
-    fromdate:{
+    fromDate:{
         type:String,
         require:true
     },
-    todate:{
+    toDate:{
         type:String,
         require:true
     },

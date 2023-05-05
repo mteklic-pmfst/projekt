@@ -12,7 +12,6 @@ import 'antd/dist/reset.css';
 const { RangePicker } = DatePicker;
 
 function Homescreen() {
-  const [poruka, postaviPoruku] = useState("Nema podataka");
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState();
@@ -41,43 +40,42 @@ function Homescreen() {
 
   }, [])
 
- function filterByDate(dates) {
+  function filterByDate(dates) {
     setFromDate(dates[0].format('DD-MM-YYYY'))
     setToDate(dates[1].format('DD-MM-YYYY'))
 
-    var temprooms=[]
-    var availability=false
-    for(const room of duplicate)
-    {
-      if(room.currentbook.length>0){
-         
-        for(const booking of room.currentbook){
+    var temprooms = []
+    var availability = false
+    for (const room of duplicate) {
+      if (room.currentbook.length > 0) {
 
-          if(!moment(moment(dates[0].format('DD-MM-YYYY')).isBetween(booking.fromDate,booking.toDate))
-          && !moment(moment(dates[1].format('DD-MM-YYYY')).isBetween(booking.fromDate,booking.toDate))
-          ){
-              if(
-                moment(dates[0]).format('DD-MM-YYYY') !== booking.fromDate &&
-                moment(dates[0]).format('DD-MM-YYYY') !== booking.toDate &&
-                moment(dates[1]).format('DD-MM-YYYY') !== booking.fromDate &&
-                moment(dates[1]).format('DD-MM-YYYY') !== booking.toDate 
-              ){
-                availability=true
-              }
+        for (const booking of room.currentbook) {
+
+          if (!moment(moment(dates[0].format('DD-MM-YYYY')).isBetween(booking.fromDate, booking.toDate))
+            && !moment(moment(dates[1].format('DD-MM-YYYY')).isBetween(booking.fromDate, booking.toDate))
+          ) {
+            if (
+              moment(dates[0]).format('DD-MM-YYYY') !== booking.fromDate &&
+              moment(dates[0]).format('DD-MM-YYYY') !== booking.toDate &&
+              moment(dates[1]).format('DD-MM-YYYY') !== booking.fromDate &&
+              moment(dates[1]).format('DD-MM-YYYY') !== booking.toDate
+            ) {
+              availability = true
+            }
           }
-          
+
+        }
+
+
       }
 
-     
+      if (availability == true || room.currentbook.length == 0) {
+        temprooms.push(room)
+      }
+
+      setData(temprooms)
     }
 
-    if(availability==true || room.currentbook.length==0){
-      temprooms.push(room)
-    }
-
-    setData(temprooms)
-  }
-    
   }
 
   return (

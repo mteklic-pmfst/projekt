@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 
 .part{
    justify-content: flex-start;
@@ -67,4 +67,6 @@ h1{
     margin-top:20px !important;
     border-radius: 5px !important;
     padding: 20px !important;
+    background-color:gainsboro;
+    font-family: 'Kalam', cursive !important;
 }

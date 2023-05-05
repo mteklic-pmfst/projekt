@@ -9,8 +9,8 @@ import Swal from 'sweetalert2'
 
 function Booking() {
   const user = JSON.parse(localStorage.getItem('currentUser'))
-  const { roomid,fromDate,toDate } = useParams();
-  
+  const { roomid, fromDate, toDate } = useParams();
+
   const [room, setRoom] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -19,8 +19,8 @@ function Booking() {
     setLoading(true)
     const res = await axios.post('http://localhost:3001/api/rooms/getroombyid', { roomid: roomid })
     setRoom(res.data);
-    setTotalamount(res.data.price*totaldays)
-   
+    setTotalamount(res.data.price * totaldays)
+
     setLoading(false);
   }
 
@@ -35,40 +35,40 @@ function Booking() {
 
   }, [])
 
-  const firstdate = moment(fromDate , 'DD-MM-YYYY')
-const lastdate = moment(toDate , 'DD-MM-YYYY')
+  const firstdate = moment(fromDate, 'DD-MM-YYYY')
+  const lastdate = moment(toDate, 'DD-MM-YYYY')
 
-const totaldays = moment.duration(lastdate.diff(firstdate)).asDays()+1
-const [totalamount,setTotalamount]=useState();
+  const totaldays = moment.duration(lastdate.diff(firstdate)).asDays() + 1
+  const [totalamount, setTotalamount] = useState();
 
 
-async function onToken(token){
-  console.log(token)
+  async function onToken(token) {
+    console.log(token)
 
-  const bookingDetails={
-    room,
-    userid:JSON.parse(localStorage.getItem('currentUser')).data._id,
-    fromDate,
-    toDate,
-    totalamount,
-    totaldays,
-    token
+    const bookingDetails = {
+      room,
+      userid: JSON.parse(localStorage.getItem('currentUser')).data._id,
+      fromDate,
+      toDate,
+      totalamount,
+      totaldays,
+      token
+    }
+
+    try {
+      setLoading(true)
+      const result = axios.post('http://localhost:3001/api/bookings/bookroom', bookingDetails)
+      setLoading(false)
+      Swal.fire('Congratulations', 'You booked room', 'success')
+        .then(result => {
+          window.location.href = '/home'
+        })
+      console.log(result)
+    } catch (error) {
+      setLoading(false)
+      Swal.fire('UPS! :(', 'Something went wrong', 'error')
+    }
   }
-
- try {
-  setLoading(true)
-  const result= axios.post('http://localhost:3001/api/bookings/bookroom',bookingDetails)
-  setLoading(false)
-  Swal.fire('Congratulations','You booked room','success')
-  .then(result=>{
-        window.location.href='/bookings'
-  })
-  console.log(result)
- } catch (error) {
-  setLoading(false)
-  Swal.fire('UPS! :(','Something went wrong','error')
- }
-}
 
   return (
     <div className='m-5'>
@@ -103,14 +103,14 @@ async function onToken(token){
               </div>
 
               <div style={{ float: 'right' }}>
-                
+
 
                 <StripeCheckout
-        token={onToken}
-        stripeKey="pk_test_51N3vFzBFWkHUqSlGJ0IroYTABBpaEKgwolqfc5iM7QvVRHeoQgIiXpelyWBcg8cPctQf2mtwJNBvjxr7GB0Do07Y00lSZYZIpE"
-      >
-        <button className='btn btn-primary' >Pay Now </button>
-        </StripeCheckout>
+                  token={onToken}
+                  stripeKey="pk_test_51N3vFzBFWkHUqSlGJ0IroYTABBpaEKgwolqfc5iM7QvVRHeoQgIiXpelyWBcg8cPctQf2mtwJNBvjxr7GB0Do07Y00lSZYZIpE"
+                >
+                  <button className='btn btn-primary' >Pay Now </button>
+                </StripeCheckout>
               </div>
             </div>
           </div>
@@ -118,8 +118,6 @@ async function onToken(token){
         </div>
       ) : (<Error />)}
 
-      {/* <h1>Booking zaslon</h1>
-      <h1>Room id={roomid}</h1> */}
     </div>
   )
 }
