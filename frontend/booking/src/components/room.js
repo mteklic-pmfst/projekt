@@ -6,29 +6,24 @@ import './room.css';
 import { Link } from 'react-router-dom';
 
 function Room({ room, fromDate, toDate }) {
-
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
-
     <div className='row ls'>
       <div className='column'>
         <h1>{room.name}</h1>
         <p>Count: {room.count}</p>
         <div className='buttoncl'>
-
           {(fromDate && toDate) && (
             <Link to={`/book/${room._id}/${fromDate}/${toDate}`}>
               <button className='btn0'>Book</button>
             </Link>
           )}
-
           <button className='btnD' onClick={handleShow}>
             Details
           </button>
-
         </div>
       </div>
       <div className='column'>
@@ -39,7 +34,6 @@ function Room({ room, fromDate, toDate }) {
           <Modal.Title>{room.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-
           <Carousel>
             {room.image.map(url => {
               return <Carousel.Item>

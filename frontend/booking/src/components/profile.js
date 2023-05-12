@@ -19,9 +19,7 @@ function Profile() {
             <Tabs defaultActiveKey="1">
                 <TabPane tab="Profile" key="1">
                     <div className='ls'>
-
                         <h1>My profile</h1>
-
                         <hr />
                         <h1><b>Name:</b> {user.data.name}</h1>
                         <h1><b>Email:</b> {user.data.email}</h1>
@@ -40,9 +38,7 @@ function Profile() {
 export default Profile
 
 
-
 export function MyBook() {
-
     const user = JSON.parse(localStorage.getItem('currentUser'))
     const [booking, setbooking] = useState([])
     const [loading, setLoading] = useState(false);
@@ -70,9 +66,7 @@ export function MyBook() {
             setLoading(false)
             console.error(err);
             Swal.fire('UPS! :(', 'Something went wrong', 'error')
-
         }
-
     }
 
     useEffect(() => {
@@ -99,8 +93,9 @@ export function MyBook() {
                                 <p><b>Checkin: {booking.fromDate} </b></p>
                                 <p><b>Checkout: {booking.toDate} </b></p>
                                 <p><b>Amount: {booking.totalamount} €</b></p>
-                                <p><b>Status: </b>{""} 
-                                {booking.status=='cancelled'?(<Tag color="red">CANCELLED</Tag>):(<Tag color="green">CONFIRMED</Tag>)}
+                                <p><b>Status: </b>
+                                {""}
+                                    {booking.status == 'cancelled' ? (<Tag color="red">CANCELLED</Tag>) : (<Tag color="green">CONFIRMED</Tag>)}
                                 </p>
                                 {booking.status !== 'cancelled' && (
                                     <p>

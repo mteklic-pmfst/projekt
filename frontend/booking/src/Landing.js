@@ -1,9 +1,8 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-import { Link, useNavigate } from "react-router-dom";
 function Landing() {
-  return (
-    
+    return (
         <div className='row landing '>
             <div className='col-md-12 text-center'>
                 <h2>HappyLife</h2>
@@ -13,9 +12,7 @@ function Landing() {
                 </Link>
             </div>
         </div>
-    
-
-  )
+    )
 }
 
 export default Landing

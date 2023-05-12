@@ -4,11 +4,11 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 
 function Loader() {
-    const [loading, setLoading] = useState(true);
-    
+  const [loading, setLoading] = useState(true);
+
   return (
     <div>
-        <ClipLoader
+      <ClipLoader
         color='#000'
         loading={loading}
         size={80}

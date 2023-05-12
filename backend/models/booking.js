@@ -1,7 +1,6 @@
 const mongoose=require("mongoose")
 
 const bookingShema=mongoose.Schema({
-
     room:{
         type:String,
         require:true

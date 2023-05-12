@@ -1,17 +1,10 @@
-
-import './App.css';
 import Nav from './components/navbar';
-import Middle from './components/middle';
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
-import Home from './components/home_part';
-import Footer from './components/footer';
 import Registration from './components/registration';
-
 import Login from './components/login';
 import Homescreen from './components/homescreen';
 import Booking from './components/book';
@@ -20,12 +13,10 @@ import Profile from './components/profile';
 import Admin from './components/Admin';
 import Landing from './Landing';
 
-
-
 function App() {
   return (
     <div className="App">
-      <Nav/>
+      <Nav />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Landing />} />
@@ -36,11 +27,8 @@ function App() {
           <Route path='/firstpage' element={<Part_all />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/admin' element={<Admin />} />
-
         </Routes>
       </BrowserRouter>
-
-
     </div>
   );
 }

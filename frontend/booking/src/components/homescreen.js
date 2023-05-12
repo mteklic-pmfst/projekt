@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react'
-// import DatePicker from "react-datepicker";
-import { DatePicker, Space } from 'antd';
-import "react-datepicker/dist/react-datepicker.css";
+import { DatePicker } from 'antd';
 import moment from "moment";
 import axios from "axios";
 import Room from "../components/room"
 import Loader from './loader';
 import Error from './Error';
+import "react-datepicker/dist/react-datepicker.css";
 import 'antd/dist/reset.css';
 const { RangePicker } = DatePicker;
 
 function Homescreen() {
-
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState();
   const [error, setError] = useState();
@@ -46,10 +44,8 @@ function Homescreen() {
     var temprooms = []
     var availability = false
     for (const room of duplicate) {
-      if (room.currentbook.length > 0) {
-
-        for (const booking of room.currentbook) {
-
+      if (room.currentbooking.length > 0) {
+        for (const booking of room.currentbooking) {
           if (!moment(moment(dates[0].format('DD-MM-YYYY')).isBetween(booking.fromDate, booking.toDate))
             && !moment(moment(dates[1].format('DD-MM-YYYY')).isBetween(booking.fromDate, booking.toDate))
           ) {
@@ -62,16 +58,12 @@ function Homescreen() {
               availability = true
             }
           }
-
         }
-
-
       }
 
-      if (availability == true || room.currentbook.length == 0) {
+      if (availability == true || room.currentbooking.length == 0) {
         temprooms.push(room)
       }
-
       setData(temprooms)
     }
 
@@ -83,7 +75,6 @@ function Homescreen() {
         <div className='row mt-3'>
           <div className='col-md-3'>
             <RangePicker format='DD-MM-YYYY' onChange={filterByDate} />
-
           </div>
         </div>
 
@@ -93,8 +84,10 @@ function Homescreen() {
               <Room room={room} fromDate={fromDate} toDate={toDate} />
             </div>
           }))
-            : (
-              <Error />)}
+            :
+            (
+              <Error />
+            )}
 
       </div>
     </div>

@@ -8,7 +8,6 @@ const authRoute=require('./routes/auth')
 const roomsRoute = require('./routes/roomRoutes.js')
 const usersRoute = require('./routes/usersRoutes.js')
 const bookingRoute = require('./routes/bookingRoute.js')
-
 const app = express();
 dotenv.config();
 

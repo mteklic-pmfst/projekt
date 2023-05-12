@@ -14,8 +14,6 @@ function Admin() {
         }
 
     }, [])
-
-
     return (
         <div className='mt-3 ms-3 me-3 ls'>
             <h1 style={{ fontSize: '30px' }}>Admin Panel</h1>
@@ -51,7 +49,6 @@ export function Bookings() {
 
     
     const fetchBook = async () => {
-
         const data = await axios.get('http://localhost:3001/api/bookings/getallbookings')
         console.log(data)
         setbooking(data.data)
@@ -72,10 +69,8 @@ export function Bookings() {
     return (
         <div className='row'>
             <div className='col-md-10'>
-
                 <h1>Booking</h1>
                 {loading && (<Loader />)}
-
                 <table className='table table-bordered table-info'>
                     <thead className='ls'>
                         <tr>
@@ -97,7 +92,6 @@ export function Bookings() {
                                 <td>{booking.fromDate}</td>
                                 <td>{booking.toDate}</td>
                                 <td>{booking.status}</td>
-
                             </tr>
                         }))}
                     </tbody>
@@ -115,8 +109,7 @@ export function Rooms() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
 
-    const fetchBook = async () => {
-
+    const fetchRoom = async () => {
         const rooms = await axios.get('http://localhost:3001/api/rooms/getallrooms')
         console.log(rooms)
         setrooms(rooms.data)
@@ -124,8 +117,7 @@ export function Rooms() {
     }
     useEffect(() => {
         try {
-            fetchBook()
-            console.log(fetchBook())
+            fetchRoom()
         } catch (err) {
             console.error(err);
             setLoading(false)
@@ -137,7 +129,6 @@ export function Rooms() {
     return (
         <div className='row'>
             <div className='col-md-10'>
-
                 <h1>Rooms</h1>
                 {loading && (<Loader />)}
 
@@ -148,7 +139,6 @@ export function Rooms() {
                             <th>Name</th>
                             <th>Rent per day</th>
                             <th>MaxCount</th>
-
                         </tr>
                     </thead>
 
@@ -159,7 +149,6 @@ export function Rooms() {
                                 <td>{room.name}</td>
                                 <td>{room.price}</td>
                                 <td>{room.count}</td>
-
                             </tr>
                         }))}
                     </tbody>
@@ -175,7 +164,6 @@ export function Users() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
     const fetchBook = async () => {
-
         const user = await axios.get('http://localhost:3001/api/users/getallusers')
         console.log(user)
         setuser(user.data)
@@ -225,7 +213,6 @@ export function Users() {
 //Add Room Component
 
 export function AddRoom() {
-
     const [name,setName]=useState('')
     const [price,setPrice]=useState('')
     const [count,setCount]=useState('')
@@ -238,7 +225,6 @@ export function AddRoom() {
     const [error, setError] = useState();
 
     async function addRoom(){
-
         const newroom={
             name,
             price,
@@ -248,10 +234,8 @@ export function AddRoom() {
         }
 
         try {
-            
             const result=await axios.post('http://localhost:3001/api/rooms/addroom',newroom)
-           
-            Swal.fire('Congratulations', 'Your new room added!', 'success')
+            Swal.fire('Congratulations', 'Your new room added! :)', 'success')
             .then(result => {
                 window.location.href = '/home'
               })

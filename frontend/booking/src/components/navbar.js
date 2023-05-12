@@ -1,18 +1,16 @@
 import React from 'react'
 import './navbar.css';
 
-
 function Nav() {
     const user = JSON.parse(localStorage.getItem('currentUser'))
-    function logout(){
+    function logout() {
         localStorage.removeItem('currentUser')
-        window.location.href='/login'
+        window.location.href = '/login'
     }
-    console.log(user)
     return (
         <div>
             <nav className="navbar navbar-expand-lg">
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand" href="/">
                     HappyLife
                 </a>
                 <button
@@ -51,17 +49,14 @@ function Nav() {
                         </>) : (
                             <>
                                 <li className="nav-item">
-                                    <button className='blabla' href="/register">Sign Up</button>
+                                    <button className='register' href="/register">Sign Up</button>
 
                                 </li>
                                 <li className="nav-item">
-                                    <button className='blabla1' href="/login">Login</button>
+                                    <button className='login' href="/login">Login</button>
                                 </li>
                             </>
                         )}
-
-
-
                     </ul>
                 </div>
             </nav>

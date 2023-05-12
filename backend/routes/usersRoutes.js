@@ -9,13 +9,11 @@ const verify=require('./verifyToken')
 router.put("/:id", verify ,async (req,res)=>{
     if(req.user.id === req.params.id || req.user.isAdmin){
         if(req.body.password){
-
             const runde = 10
             const passHash = await bcrypt.hash(req.body.password, runde)
 
             req.body.password =passHash
         }
-
         try {
             const updatedUser=await User.findByIdAndUpdate(req.user.id,{$set:req.body})
             res.status(200).json(updatedUser)
@@ -29,15 +27,11 @@ router.put("/:id", verify ,async (req,res)=>{
     }
 } )
 
-//DELETE
-
 //GET
 router.get("/getallusers",async (req,res)=>{
-    
         try {
             const users=await User.find()
             res.send(users)
-            
         } catch (err) {
             console.error(err);
         return res.status(400).json({ message: "Error: " + err.message })

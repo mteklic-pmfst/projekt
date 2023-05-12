@@ -2,22 +2,17 @@ const express=require("express")
 const router=express.Router();
 const User=require('../models/user')
 const bcrypt = require('bcrypt');
-// const CryptoJS = require("crypto-js");
 const jwt=require("jsonwebtoken")
 
 //REGISTER
 router.post("/register",async(req,res)=>{
-
     const runde = 10
     const passHash = await bcrypt.hash(req.body.password, runde)
-    
     const newuser=new User({
         name:req.body.name,
         email:req.body.email,
-        // password:CryptoJS.AES.encrypt( req.body.password,process.env.SECRET_KEY).toString()
         password:passHash
     });
-    console.log(newuser)
     try {
         const user=await newuser.save();
         res.status(201).json(user);
@@ -27,7 +22,6 @@ router.post("/register",async(req,res)=>{
 })
 
 //LOGIN
-
 router.post("/login",async(req,res)=>{
     try {
         const user=await User.findOne({email:req.body.email})
@@ -35,9 +29,6 @@ router.post("/login",async(req,res)=>{
 
         const isPassword=await bcrypt.compare(req.body.password,user.password)
         if(!isPassword) return res.status(401).json("Wrong password or username")
-        // originalPassword!==req.body.password && 
-        //     res.status(401).json("Wrong password or username");
-
             const tokenacces=jwt.sign({id:user._id,isAdmin:user.isAdmin}, process.env.SECRET_KEY,{ expiresIn: "1d" })
             const {password, ...info}=user._doc;
 

@@ -6,7 +6,6 @@ const { v4: uuidv4 } = require('uuid');
 const stripe = require('stripe')('sk_test_51N3vFzBFWkHUqSlGcPeH1lv1BhiW5EvWAC3sQkLYFGMc2XdYv1m4plDzKU426T4X8gV7UcyNXT7qH1ITccchCeil00o3BTiKh6')
 
 router.post('/bookroom', async (req, res) => {
-
     const {
         room,
         userid,
@@ -22,16 +21,12 @@ router.post('/bookroom', async (req, res) => {
             email: token.email,
             source: token.id,
         })
-
-       
-
         const payment = await stripe.charges.create({
 
-            amount: totalamount*100,
+            amount: totalamount * 100,
             customer: customer.id,
             currency: 'eur',
             receipt_email: token.email
-
         },
             {
                 idempotencyKey: uuidv4()
@@ -39,7 +34,6 @@ router.post('/bookroom', async (req, res) => {
         )
 
         if (payment) {
-
             try {
                 const newbooking = new Booking({
                     room: room.name,
@@ -54,8 +48,6 @@ router.post('/bookroom', async (req, res) => {
                 })
 
                 const booking = await newbooking.save()
-
-
                 const temp = await Room.findOne({ _id: room._id })
 
                 temp.currentbooking.push({
@@ -68,15 +60,12 @@ router.post('/bookroom', async (req, res) => {
 
                 await temp.save()
 
-               
             }
             catch (err) {
                 console.error(err);
                 return res.status(400).json({ message: "Error: " + err.message })
             }
-
         }
-
         res.send('Payment Succesful,You booked room')
 
     } catch (err) {
@@ -86,36 +75,36 @@ router.post('/bookroom', async (req, res) => {
 
 })
 
-router.post("/getuserbooking",async(req,res)=>{
-    const userid=req.body.userid
+router.post("/getuserbooking", async (req, res) => {
+    const userid = req.body.userid
 
     try {
-        const bookings=await Booking.find({userid:userid})
+        const bookings = await Booking.find({ userid: userid })
         res.send(bookings)
     } catch (err) {
         console.error(err);
-        return res.status(400).json({ message: "Error: " + err.message })
+        return res.status(404).json({ message: "Error: " + err.message })
     }
 })
 
-router.post("/cancelbooking",async(req,res)=>{
-    const {bookingid,roomid}=req.body
+router.post("/cancelbooking", async (req, res) => {
+    const { bookingid, roomid } = req.body
 
     try {
-        const bookingitem=await Booking.findOne({_id:bookingid})
+        const bookingitem = await Booking.findOne({ _id: bookingid })
 
-        bookingitem.status='cancelled'
+        bookingitem.status = 'cancelled'
 
         await bookingitem.save()
-        const room=await Room.findOne({_id:roomid})
+        const room = await Room.findOne({ _id: roomid })
 
-        const bookings=room.currentbooking
+        const bookings = room.currentbooking
 
-        const temp=bookings.filter(booking=>booking.bookingid.toString()!==bookingid)
+        const temp = bookings.filter(booking => booking.bookingid.toString() !== bookingid)
 
-        room.currentbooking=temp
+        room.currentbooking = temp
 
-        res.send('Your booking cancelled successfukl!')
+        res.send('Your booking cancelled successful!')
 
         await room.save()
     } catch (err) {
@@ -124,9 +113,9 @@ router.post("/cancelbooking",async(req,res)=>{
     }
 })
 
-router.get("/getallbookings",async(req,res)=>{
+router.get("/getallbookings", async (req, res) => {
     try {
-        const booking=await Booking.find()
+        const booking = await Booking.find()
         res.send(booking)
     } catch (err) {
         console.error(err);

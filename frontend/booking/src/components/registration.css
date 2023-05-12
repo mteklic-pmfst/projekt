@@ -4,10 +4,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
-.lag{
+.reg{
     border:4px solid whitesmoke;
     border-radius: 7px;
     padding-left: 10px;
@@ -16,7 +15,6 @@
     padding-right: 10px;
     border-color: floralwhite;
 }  
-
 
 .pocetni{
     background-color:papayawhip;
